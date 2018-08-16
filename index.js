@@ -20,7 +20,8 @@ const app = express();
 // top level middleware
 app.use(bodyParser.json());
 
-// create a connection with our database
+// create a connection with our database 
+// IMPORTANT: sql query files must be in a folder called db on the root level
 massive(CONNECTION_STRING).then(db => {
   app.set('db', db); // 'set' our database connection object (db) on app
 
